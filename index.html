@@ -875,6 +875,8 @@ function fit(){
   const m=Math.max(160,Math.min(availW,availH));let s=Math.floor(m/W);
   const size=s>=2?s*W:Math.min(availW,Math.max(W,m));
   cv.style.width=size+'px';
+  // the stage follows the canvas so a long caption wraps instead of widening the frame
+  document.querySelector('.stage').style.width=(size+8)+'px';
 }
 window.addEventListener('resize',fit);
 
